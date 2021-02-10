@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Options</title>
+</head>
+<body>
+ <label for="CustomerOptions">Choose an option:</label>
+
+    <select name="options" id="options" onchange="showHide()">
+    
+        <option value="viewaccounts">View Accounts</option>
+        <option value="applybank">Apply for a bank account</option>
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+        <option value="transfer">Transfer</option>
+        <option value="pendingtransfer">View Pending Transfer</option>
+        <option value="previoustransaction">View Previous Transaction</option>
+    </select>
+    <form id="viewaccounts" style="display: block"action="VA" method="GET">
+        <h2>View Accounts</h2>
+        Enter your Customer id: <br /><input type="text" placeholder="Enter your customer id" name="cid" /><br /><br />
+        <input type="submit" name="Submit"/>
+    </form>
+    <form id="applybank" style="display: none" action="CBA" method="POST">
+        <h2>Apply for a bank account</h2>
+        Enter your Customer id: <br /><input type="text" placeholder="Enter your customer id" name="cid" /><br /><br />
+         Enter your Starting Balance: <br /><input type="text" placeholder="Enter your starting balance" name="sb" /><br /><br />
+        <input type="submit" name="Submit"/>
+    </form>
+    <form id="deposit" style="display: none" action ="DS" method="POST">
+    <h2>Deposit money</h2>
+    Enter amount: <br /><input type="text" placeholder="Enter amount to deposit" name="amount" /><br />
+    Enter Account number: <br /><input type="text" placeholder="Enter your account number" name="an" /><br /><br />
+    <input type="submit" name="Submit"/>
+    </form>
+    <form id="withdraw" style="display: none" action="WS" method="GET">
+    <h2>Withdraw money</h2>
+    Enter amount: <br /><input type="text" placeholder="Enter amount to withdraw" name="amount" /><br />
+    Enter Account number: <br /><input type="text" placeholder="Enter your account number" name="an" /><br /><br />
+   <input type="submit" name="Submit"/>
+    </form>
+
+    <form id="transfer" style="display: none" action="TS" method="POST">
+    <h2>Transfer money</h2>
+    Enter amount: <br /><input type="text" placeholder="Enter amount to transfer" name="amount" /><br />
+    Enter Account number to Transfer from: <br /><input type="text" placeholder="Enter account number"
+        name="an1" /><br />
+    Enter Account number to Transfer to: <br /><input type="text" placeholder="Enter account number"
+        name="an2" /><br /><br />
+        Comment: <br /><input type="text" placeholder="Enter comment"
+        name="comment" /><br /><br />
+    <input type="submit" name="Submit"/>
+    </form>
+    <form id="pendingtransfer" style="display: none"action="VP" method="POST">
+    <h2>View Pending Transfers</h2>
+    Enter Account number: <br /><input type="text" placeholder="Enter your account number" name="an" /><br /><br />
+
+    <input type="submit" name="Submit"/>
+    </form>
+    <form id="previoustransaction" style = "display: none" action="VPT" method="POST">
+    <h2>View Previous Transaction</h2>
+    Enter Enter Account number: <br /><input type="text" placeholder="Enter your account number" name="an" /><br /><br />
+    <input type="submit" name="Submit"/>
+    </form><br/><br/>
+    <form action="Login.html">
+    <input type="submit" value="Log out" />
+</form>
+    <script>
+
+        function showHide() {
+    
+            var y = document.getElementById("options").value;
+            var t = ["viewaccounts", "applybank", "deposit", "withdraw", "transfer","pendingtransfer", "previoustransaction"]
+            for (var i = 0; i < t.length; i++) {
+                var x = document.getElementById(t[i])
+                if (y == t[i])
+                    x.style.display = "block";
+                else
+                    x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+<style>
+
+html { background: url(D:/backgroundimage.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover; 
+-moz-background-size: cover; 
+-o-background-size: cover; 
+background-size: cover; 
+opacity: 1.0; }
+body {
+  color: white;
+}
+
+
+</style>
+</html>

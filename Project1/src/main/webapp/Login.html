@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>$$$ Bank</title>
+</head>
+<style>
+html { background: url(D:/backgroundimage.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover; 
+-moz-background-size: cover; 
+-o-background-size: cover; 
+background-size: cover; 
+opacity: 1.0; }
+
+body {
+  color: white;
+}
+</style>
+<body>
+<div class="header">
+	
+	<h1>Welcome to $$$ Bank</h1>
+	<button type="button" onclick="register()">Register</button>
+	<button type="button" onclick="showLogin()">Login</button>
+</div>
+	
+
+
+	<label id="label" style="display: none"> Are you a customer or
+		an Employee</label>
+	<select name="options" id="options" onchange="login()"
+		style="display: none">
+		<br/>
+		<option value=""></option>
+		<option value="customer">Customer</option>
+		<option value="employee">Employee</option>
+	</select>
+	<form id="register" action="RS" method="POST" style="display: none">
+		<h2>Register</h2>
+
+		Customer id: <br />
+		<input type="text" placeholder="Enter customer id" name="cid" /><br />
+		User Name : <br /> <input type="text"
+			placeholder="Create your username" name="runame" /><br /> Password
+		: <br /> <input type="password" placeholder="Create your password"
+			name="rpwd" /><br /> First Name : <br />
+		<input type="text" placeholder="Enter your first name" name="fname" /><br />
+		Last Name : <br />
+		<input type="text" placeholder="Enter your last name" name="lname" /><br />
+		<br /> <input type="submit" name="Submit" />
+	</form>
+	<form id="customer" action="LS" method="POST" style="display: none">
+		<h2>Customer Login</h2>
+		User Name : <br /> <input type="text"
+			placeholder="Enter your username" name="cuname" /><br /> Password :
+		<br /> <input type="password" placeholder="Enter your password"
+			name="cpwd" /><br />
+		<br /> <input type="submit" value="Submit" /> <br /> <br />
+
+	</form>
+
+	<form id="employee" style="display: none" action="EL" method="POST">
+		<h2>Employee Login</h2>
+		User Name : <br /> <input type="text"
+			placeholder="Enter your username" name="euname" /><br /> Password :
+		<br /> <input type="password" placeholder="Enter your password"
+			name="epwd" /><br /> Employee id: <br />
+		<input type="text" placeholder="Enter your Employee id" name="eid" /><br />
+		<br /> <input type="submit" value="Submit" /> <br /> <br />
+
+	</form>
+
+	<script>
+		function register() {
+			var x = document.getElementById("register");
+			x.style.display = "block";
+			var y = document.getElementById("options")
+			y.style.display = "none";
+			var z = document.getElementById("label")
+			z.style.display = "none";
+			var w = document.getElementById("customer");
+			w.style.display="none";
+			var q = document.getElementById("employee");
+			q.style.display="none";
+		}
+		function showLogin() {
+			var x = document.getElementById("register");
+			x.style.display = "none";
+			var y = document.getElementById("options")
+			y.style.display = "block";
+			var z = document.getElementById("label")
+			z.style.display = "block";
+		}
+		function login() {
+			var x = document.getElementById("register");
+			x.style.display = "none";
+			var y = document.getElementById("options").value;
+			var t = [ "employee", "customer" ]
+			for (var i = 0; i < t.length; i++) {
+				var x = document.getElementById(t[i])
+				if (y == t[i])
+					x.style.display = "block";
+				else
+					x.style.display = "none";
+			}
+		}
+	</script>
+	
+</body>
+
+
+
+
+</html>

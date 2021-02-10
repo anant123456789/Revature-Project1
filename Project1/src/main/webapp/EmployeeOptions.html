@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Options</title>
+</head>
+<body>
+<label for="EmployeeOptions">Choose an option:</label>
+
+    <select name="options" id="options" onchange="showHide()">
+    
+        <option value="viewaccounts">View Accounts</option>
+        <option value="pendinguser">View Pending User Accounts</option>
+        <option value="translogs">View Transaction Logs</option>
+        <option value="pendingbank">View Pending Bank Accounts</option>
+       
+    </select>
+
+<div id="viewaccounts" style="display: block">
+        <h1>
+  <a href="VE"method="GET" class="nav-left" >
+    View Accounts
+  </a>
+</h1>
+    </div>
+    <div id="pendinguser" style="display: none">
+        <h1>
+  <a href="PU"method="GET" class="nav-left">
+    View Pending User Accounts
+  </a>
+</h1>
+    </div>
+    <div id="translogs" style="display: none">
+        <h1>
+  <a href="VT"method="GET" class="nav-left" >
+    View Transaction Logs
+  </a>
+</h1>
+    </div>
+    <div id="pendingbank" style="display: none">
+        <h1>
+  <a href="PBA"method="GET" class="nav-left">
+    View Pending Bank Accounts
+  </a>
+</h1>
+    </div><br/><br/>
+    <form action="Login.html">
+    <input type="submit" value="Log out" />
+</form>
+<script>
+function showHide() {
+    
+    var y = document.getElementById("options").value;
+    var t = ["viewaccounts", "pendinguser", "translogs","pendingbank"]
+    for (var i = 0; i < t.length; i++) {
+        var x = document.getElementById(t[i])
+        if (y == t[i])
+            x.style.display = "block";
+        else
+            x.style.display = "none";
+    }
+}
+</script>
+
+</body>
+<style>
+
+html { background: url(D:/backgroundimage.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover; 
+-moz-background-size: cover; 
+-o-background-size: cover; 
+background-size: cover; 
+opacity: 1.0; }
+body {
+  color: white;
+}
+.nav-left{ 
+    color: white;
+    }
+    a:link {
+  text-decoration: none;
+}
+
+</style>
+</html>

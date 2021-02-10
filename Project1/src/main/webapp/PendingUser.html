@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Pending Users</title>
+</head>
+<body>
+
+<button type="button" onclick="approve()">Approve</button>
+<button type="button" onclick="reject()">Reject</button>
+<form id="approve" method="GET"  action="AU" style="display: none">
+<h2>Approve</h2>
+Enter username <br /><input type="text" placeholder="Enter username" name="username" /><br /><br />
+<input type="submit" value="Submit" /> <br /> <br />
+</form>
+<form id="reject" method="GET"  action="RU" style="display: none">
+<h2>Reject</h2>
+Enter username <br /><input type="text" placeholder="Enter username" name="username" /><br /><br />
+<input type="submit" value="Submit" /> <br /> <br />
+</form>
+</body>
+<script>
+function approve(){
+var x = document.getElementById("approve");
+x.style.display = "block";
+var y = document.getElementById("reject");
+y.style.display = "none";
+}
+function reject(){
+	var x = document.getElementById("reject");
+	x.style.display = "block";
+	var y = document.getElementById("approve");
+	y.style.display = "none";
+}
+</script>
+<style>
+html { background: url(D:/backgroundimage.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover; 
+-moz-background-size: cover; 
+-o-background-size: cover; 
+background-size: cover; 
+opacity: 1.0; }
+body {
+  color: white;
+}
+
+
+</style>
+</html>
